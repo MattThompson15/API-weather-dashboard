@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id=""weather-container">
-    <h1>Weather Dashboard</h1>
+    <div id="weather-container">
+        <h1>Weather Dashboard</h1>
 
-    <p>Welcome to the Weather Dasboard! Enter the name of a city to get the current and future weather conditions.</p>
+        <p>Welcome to the Weather Dasboard! Enter the name of a city to get the current and future weather conditions.</p>
 
-    <div>
-        <input type="text" id="search-input" placeholder="Enter city">
-        <button id="search-btn" onclick="searchWeather()">Search</button>
+        <div>
+            <input type="text" id="search-input" placeholder="Enter city">
+            <button id="search-btn" onclick="searchWeather()">Search</button>
+        </div>
+
+        <div id="search-history"></div>
+        <div id="current-weather" class="weather-card"></div>
+        <div id="future-weather" class="weather-card"></div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
