@@ -18,3 +18,30 @@ h1 {
     color: #333;
     text-align: center;
 }
+
+p {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+#search-input {
+    width: 70%;
+    padding: 10px;
+    font-size;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-history {
+    margin-top: 20px;
+    color: #777;
+}
+
+.weather-card {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
