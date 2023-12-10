@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
@@ -10,7 +10,7 @@ body {
     margin: 20px auto;
     background-color: #ffffff;
     padding: 20px;
-    border-radius: 15;
+    border-radius: 10;
     box-shadow: 00 15 px rgba(0, 0, 0, 0.1);
 }
 
@@ -28,8 +28,18 @@ p {
 #search-input {
     width: 70%;
     padding: 10px;
-    font-size;
+    font-size: 16px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
     border-radius: 5px;
 }
 
