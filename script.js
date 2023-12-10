@@ -28,13 +28,15 @@ function searchFutureWeather(city) {
     }        
     
 function displayCurrentWeather(data) {
-    const CurrentWeather = document.getElementById('current-weather');
-    CurrentWeather.innerHTML = `
+    console.log(data.weather[0].icon);
+    const currentWeather = document.getElementById('current-weather');
+    currentWeather.innerHTML = `
         <h2>${data.name}</h2>
         <p>Date: ${new Date().toLocaleDateString()}</p>
         <p>Temperature: ${Math.round(data.main.temp - 273.15)}°C</p>
         <p>Humidity: ${data.main.humidity}%</p>
         <p>Wind Speed: ${data.wind.speed} m/s</p>
+        <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">
     `;
 }
 
@@ -50,6 +52,7 @@ function displayFutureWeather(data) {
                 <p>Temperature: ${Math.round(dayData.main.temp - 273.15)}°C</p>
                 <p>Humidity: ${dayData.main.humidity}%</p>
                 <p>Wind Speed: ${dayData.wind.speed} m/s</p>
+                <img src="https://openweathermap.org/img/w/${dayData.weather[0].icon}.png" alt="Weather Icon">
             </div>
         `;
     }
@@ -57,6 +60,10 @@ function displayFutureWeather(data) {
 
 function addSearchToHistory(city) {
     searchHistory.push(city);
+    updateSearchHistory();
+}
+    
+ function updateSearchHistory() {  
     const searchHistoryElement = document.getElementById('search-history');
     searchHistoryElement.innerHTML = `<p>Search History: ${searchHistory.join(', ')}</p>`;
 }
