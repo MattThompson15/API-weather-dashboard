@@ -1,10 +1,12 @@
+// API key for OpenWeatherAPP
 const APIKey = "12961d5b9ebac62ba8cdb709a0e71473";
+// Array to store search history
 const searchHistory = []
 
-
+// Function to initiate weather search
 function searchWeather() {
     const city = document.getElementById('search-input').value;
-    
+    // Fetch current weather
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`)
         .then(response => response.json())
         .then(data => {
@@ -12,11 +14,11 @@ function searchWeather() {
             addSearchToHistory(city);
         })
         .catch(error => console.error('Error fetching current weather', error));
-
+    // Fetch and display 5-day forecast
     searchFutureWeather(city);
 
 }
-
+// Function to fetch and display 5-day forecast
 function searchFutureWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`)
         .then(response => response.json())
@@ -26,7 +28,7 @@ function searchFutureWeather(city) {
         .catch(error => console.error('Error fetching future weather', error));
 
     }        
-    
+// Function to display current weather data  
 function displayCurrentWeather(data) {
     console.log(data.weather[0].icon);
     const currentWeather = document.getElementById('current-weather');
@@ -39,7 +41,7 @@ function displayCurrentWeather(data) {
         <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">
     `;
 }
-
+// Function to dislpay 5-day forecast data
 function displayFutureWeather(data) {
     const futureWeather = document.getElementById('future-weather');
     futureWeather.innerHTML = '<h2>5-Day Forecast</h2>';
@@ -57,13 +59,13 @@ function displayFutureWeather(data) {
         `;
     }
 }
-
+// Function to add searched history to tge search history
 function addSearchToHistory(city) {
     searchHistory.push(city);
     updateSearchHistory();
 }
-    
- function updateSearchHistory() {  
+// FUnction to update and display search history
+function updateSearchHistory() {  
     const searchHistoryElement = document.getElementById('search-history');
     searchHistoryElement.innerHTML = `<p>Search History: ${searchHistory.join(', ')}</p>`;
 }

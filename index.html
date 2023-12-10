@@ -8,20 +8,23 @@
 </head>
 <body>
     <div id="weather-container">
+        <!--Header Section-->
         <h1>Weather Dashboard</h1>
 
         <p>Welcome to the Weather Dasboard! Enter the name of a city to get the current and future weather conditions.</p>
-
+        <!--Search form Section-->
         <div>
             <input type="text" id="search-input" placeholder="Enter city">
             <button id="search-btn"onclick="searchWeather()">Search</button></button>
         </div>
-
+        <!--Search history Section-->
         <div id="search-history"></div>
+        <!--Current Weather section-->
         <div id="current-weather" class="weather-card"></div>
+        <!--Future Weather Section-->
         <div id="future-weather" class="weather-card"></div>
     </div>
-
+        <!--Script tag-->
     <script src="script.js"></script>
 </body>
 </html>
