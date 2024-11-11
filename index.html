@@ -11,12 +11,15 @@
         <!--Header Section-->
         <h1>Weather Dashboard</h1>
 
-        <p>Welcome to the Weather Dasboard! Enter the name of a city to get the current and future weather conditions.</p>
+        <p> Enter the name of a city to get the current and future weather conditions.</p>
         <!--Search form Section-->
-        <div>
+        <div id="search-section">
             <input type="text" id="search-input" placeholder="Enter city">
-            <button id="search-btn"onclick="searchWeather()">Search</button></button>
+            <button id="search-btn" onclick="searchWeather()">Search</button>
         </div>
+
+        <!--Loading-spinner-->
+        <div id="loading-spinner" style="display: none;">Loading...</div>
         <!--Search history Section-->
         <div id="search-history"></div>
         <!--Current Weather section-->
