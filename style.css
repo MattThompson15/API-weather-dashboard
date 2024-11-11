@@ -14,17 +14,17 @@ body {
     box-shadow: 00 15 px rgba(0, 0, 0, 0.1);
 }
 /* Header Stylings */
-h1 {
-    color: #333;
+h1, p {
     text-align: center;
 }
-/* Text Styling */
-p {
-    color: #666;
-    font-size: 14px;
-    text-align: center;
-}
+
 /* Input styling */
+
+#search-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 #search-input {
     width: 70%;
     padding: 10px;
@@ -43,43 +43,31 @@ p {
     border-radius: 5px;
 }
 
+#search-btn:hover {
+    background-color: #45a049;
+}
+
+#loading-spinner {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0.5;}
+    50% { opacity: 1;}
+    100% { opacity: 0.5;}
+
+}
+
 #search-history {
     margin-top: 20px;
     color: #777;
-
-}
-
-.weather-card {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#future-weather {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-/* Styling for forecast cards */
-.forecast-card {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.forecast-card p {
-    margin: 5px 0;
-}
-/* Styling for Search History */
-#search-history {
-    margin-top: 20px;
     font-weight: bold;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
+
 }
 
 #search-history p {
@@ -90,9 +78,42 @@ p {
 #search-history a {
     text-decoration: none;
     color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
 }
 
 #search-history a:hover {
-    text-decoration: underline;
+    color: #4caf50;
 }
 
+.weather-card {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Styling for forecast cards */
+.forecast-card {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    #search-input {
+        width: 60%;
+    }
+
+    .weather-card, .forecast-card {
+        padding: 20px;
+        text-align: center;
+    }
+}
